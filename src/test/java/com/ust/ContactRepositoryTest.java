@@ -33,8 +33,8 @@ class ContactRepositoryTest {
     @Test
     @DisplayName("Create a new contact")
     public void saveNewContact() {
-        var contact = repository.save("Ashish", "1234567890");
-        assertEquals("Ashish", contact.getName(), "Name should be Ashish");
+        var contact = repository.save("Sam", "1234567890");
+        assertEquals("Sam", contact.getName(), "Name should be Ashish");
         assertTrue( contact.getPhoneNumbers().contains("1234567890"),
                 "Phone number should be 1234567890");
     }
@@ -42,12 +42,12 @@ class ContactRepositoryTest {
     @Test
     @DisplayName("Update an existing contact with a new phone number")
     public void updateExistingContact() {
-        repository.save("Ashish", "1234567890");
-        var updatedContact = repository.save("Ashish", "0987654321");
+        repository.save("Sam", "1234567890");
+        var updatedContact = repository.save("Sam", "0987654321");
 
         // Check if the name is updated
-        assertEquals("Ashish", updatedContact.getName(),
-                "Name should be Ashish");
+        assertEquals("Sam", updatedContact.getName(),
+                "Name should be Sam");
 
         // Check if the phone there are 2 phone numbers in the contact
         assertEquals(2, updatedContact.getPhoneNumbers().size(),
@@ -65,7 +65,7 @@ class ContactRepositoryTest {
         @Test
         @DisplayName("Find contact by id")
         public void findContactById() throws ContactNotFoundException {
-            var contact = repository.save("Ashish", "1234567890");
+            var contact = repository.save("Sam", "1234567890");
             var foundContact = repository.findById(contact.getId());
             assertEquals(contact, foundContact, "Contact should be found");
         }
@@ -83,7 +83,7 @@ class ContactRepositoryTest {
         @Test
         @DisplayName("Find contact by phone number")
         public void findContactByPhoneNumber() throws ContactNotFoundException {
-            var contact = repository.save("Ashish", "1234567890");
+            var contact = repository.save("Sam", "1234567890");
             var foundContact = repository.findByPhoneNumber("1234567890");
             assertEquals(contact, foundContact, "Contact should be found");
         }
