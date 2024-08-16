@@ -23,7 +23,7 @@ class ContactTest {
         }
         @Test
         @DisplayName("Create a contact using the empty constructor")
-        void createContactEmtyConstructor() {
+        void createContactEmptyConstructor() {
             // Given
             Contact contact = new Contact();
             // Then

@@ -3,7 +3,6 @@ package com.ust;
 import lombok.*;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -14,7 +13,7 @@ import java.util.Set;
 public class Contact {
     private long id;
     private String name = "";
-    private Set<String> phoneNumbers = new HashSet();
+    private Set<String> phoneNumbers = new HashSet<>();
 
     public Contact(long id, String name,
                    String phoneNumber) {
